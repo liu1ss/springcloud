@@ -13,7 +13,6 @@ spring:
             allowedMethods: "*"
             allowedHeaders: "*"
 
-#缩减版
 #    gateway:
 #      discovery:
 #        locator:
@@ -21,10 +20,10 @@ spring:
 
       routes:
             - id: testway
-              uri: lb://Product    #设置一个http://localhost:8472
+              uri: http://localhost:8473    #设置一个http://localhost:8472
               order: 1
               predicates:
-                - Path=/Product/**
+                - Path=/order/**
 #            - Before=2020-11-28T00:00:00.000+08:00 # 表示在2020前访问
               filters:                     # 过滤器: 可以在请求前或请求后作一些手脚
                 - StripPrefix=1
@@ -35,8 +34,7 @@ spring:
 
 my:
   jwt:
-    #跳过认证的路由
-    skip-auth-urls:
+    skip-auth-urls: #跳过认证的路由
       - /ceshi
       - /test
 

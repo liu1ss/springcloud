@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 public class orederApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(orederApplication.class,args);
+        SpringApplication.run(orederApplication.class, args);
     }
     @Bean
     @LoadBalanced
